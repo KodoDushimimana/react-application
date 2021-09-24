@@ -3,35 +3,30 @@ import ReactDOM from 'react-dom';
 //import Car from '../components/Car.js'
 
 
-class Car extends React.Component {
+class MyForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      brand: "Ford",
-      model: " Mustang",
-      color: "red",
-      year: 1964
-    };
+    this.state = { username: '' };
   }
-  changeColor = () => {
-    this.setState({color: "blue"});
+  myChangeHandler = (event) => {
+    this.setState({username: event.target.value});
+  }
+  send = (event)=>{
+    alert(event)
   }
   render() {
     return (
-      <div>
-        <h1>My {this.state.brand}</h1>
-        <p>
-          It is a {this.state.color}
-           {this.state.model}
-          from {this.state.year}.
-        </p>
-        <button
-          type="button"
-          onClick={this.changeColor}
-        >Change color</button>
-      </div>
+      <form>
+      <h1>Hello {this.state.username}</h1>
+      <p>Enter your name:</p>
+      <input
+        type='text'
+        onChange={this.myChangeHandler}
+      />
+      <input type="submit" onSubmit={this.state.send} />
+      </form>
     );
   }
 }
 
-ReactDOM.render(<Car/>, document.getElementById('root'))
+ReactDOM.render(<MyForm />, document.getElementById('root'));
