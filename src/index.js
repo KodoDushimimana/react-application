@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Car from './App.js'
 import './App.css'
+import './mysass.scss'
 
 class MyHeader extends React.Component {
   render() {
@@ -20,4 +22,4 @@ class MyHeader extends React.Component {
   }
 }
 
-ReactDOM.render(<MyHeader />, document.getElementById('root'));
+ReactDOM.render(<Car />, document.getElementById('root'));
