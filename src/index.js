@@ -1,26 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Car from '../components/Car.js'
+import './App.css'
 
-
-class MyForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mycar: 'Ford'
-    };
-  }
+class MyHeader extends React.Component {
   render() {
+    const myStyle ={
+      color: "white",
+      fontSize: "25px",
+      backgroundColor: "DodgerBlue",
+      fontFamily:"Arial",
+      textAlign:"Center"
+    }
     return (
-      <form>
-      <select value={this.state.mycar}>
-        <option value="Ford">Ford</option>
-        <option value="Volvo">Volvo</option>
-        <option value="Fiat">Fiat</option>
-      </select>
-      </form>
+      <div>
+      <h1 style={myStyle}>Hello Style!</h1>
+      <p style={{color:"white"}, {textAlign:"center"},{backgroundColor: "black"}}>Add a little style!</p>
+      </div>
     );
   }
 }
 
-ReactDOM.render(<MyForm />, document.getElementById('root'));
+ReactDOM.render(<MyHeader />, document.getElementById('root'));
